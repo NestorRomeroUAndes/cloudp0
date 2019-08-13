@@ -1,22 +1,24 @@
 class EventosController < ApplicationController
+  before_action :require_login
+
   def index
-    @eventos = Evento.all
+    @eventos = current_user.eventos
   end
 
   def show
-    @evento = Evento.find(params[:id])
+    @evento = current_user.eventos.find(params[:id])
   end
 
   def edit
-    @evento = Evento.find(params[:id])
+    @evento = current_user.eventos.find(params[:id])
   end
 
   def new
-     @evento = Evento.new
+     @evento = current_user.eventos.build
   end
 
   def create
-    @evento = Evento.new(evento_params)
+    @evento = current_user.eventos.build(evento_params)
     if @evento.save
       redirect_to @evento
     else
@@ -25,7 +27,7 @@ class EventosController < ApplicationController
   end
 
   def update
-    @evento = Evento.find(params[:id])
+    @evento = current_user.eventos.find(params[:id])
 
     if @evento.update(evento_params)
       redirect_to @evento
@@ -35,7 +37,7 @@ class EventosController < ApplicationController
   end
 
   def destroy
-    @evento = Evento.find(params[:id])
+    @evento = current_user.eventos.find(params[:id])
     @evento.destroy
 
     redirect_to eventos_path
