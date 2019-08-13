@@ -1,0 +1,38 @@
+<h1>Datos del Evento</h1>
+<p>
+  <strong>Nombre</strong>
+  <%= @evento.nombre %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @evento.categoria %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @evento.lugar %>
+</p>
+
+<p>
+  <strong>direccion:</strong>
+  <%= @evento.direccion %>
+</p>
+
+<p>
+  <strong>fecha de inicio:</strong>
+  <%= @evento.fecha_inicio %>
+</p>
+
+<p>
+  <strong>fecha de finalizacion:</strong>
+  <%= @evento.fecha_fin %>
+</p>
+
+<p>
+  <strong>Modalidad de asistencia:</strong>
+  <%= @evento.modalidad %>
+</p>
+
+<%= link_to 'Edit', edit_evento_path(@evento) %> |
+<%= link_to 'Back', eventos_path %>
