@@ -1,6 +1,6 @@
 class UserEventRelation < ActiveRecord::Migration[5.2]
   def change
-    change_table :eventos do |t|
+    create_table :eventos do |t|
       t.string :nombre
       t.string :categoria
       t.string :lugar
@@ -10,6 +10,8 @@ class UserEventRelation < ActiveRecord::Migration[5.2]
       t.string :modalidad
 
       t.belongs_to :user, null: false, foreign_key: true
+
+      t.timestamps
     end
   end
 end
