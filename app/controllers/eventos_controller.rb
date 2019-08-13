@@ -2,7 +2,7 @@ class EventosController < ApplicationController
   before_action :require_login
 
   def index
-    @eventos = current_user.evento
+    @eventos = current_user.evento.order(id: :desc)
   end
 
   def show
