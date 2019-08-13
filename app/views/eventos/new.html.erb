@@ -8,12 +8,12 @@
 
   <p>
     <%= form.label :categoria %><br>
-    <%= form.text_area :categoria %>
+    <%= form.select  :categoria, ['Conferencia', 'Seminario', 'Congreso', 'Curso'] %>
   </p>
 
   <p>
     <%= form.label :lugar %><br>
-    <%= form.text_area :lugar %>
+    <%= form.text_field :lugar %>
   </p>
 
   <p>
@@ -23,17 +23,17 @@
 
   <p>
     <%= form.label :fecha_inicio %><br>
-    <%= form.text_area :fecha_inicio %>
+    <%= form.date_field :fecha_inicio %>
   </p>
 
   <p>
     <%= form.label :fecha_fin %><br>
-    <%= form.text_area :fecha_fin %>
+    <%= form.date_field :fecha_fin %>
   </p>
 
   <p>
     <%= form.label :modalidad %><br>
-    <%= form.text_area :modalidad %>
+    <%= form.select :modalidad, ['Presencial', 'Virtual'] %>
   </p>
 
   <p>
