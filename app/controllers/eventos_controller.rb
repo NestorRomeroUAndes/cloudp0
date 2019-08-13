@@ -2,6 +2,7 @@ class EventosController < ApplicationController
   def index
     @eventos = Evento.all
   end
+
   def show
     @evento = Evento.find(params[:id])
   end
@@ -20,6 +21,7 @@ class EventosController < ApplicationController
       redirect_to @evento
     else
       render 'new'
+    end
   end
 
   def update
