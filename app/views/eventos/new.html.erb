@@ -2,13 +2,38 @@
 
 <%= form_with scope: :eventos, url: eventos_path, local: true do |form| %>
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :nombre %><br>
+    <%= form.text_field :nombre %>
   </p>
 
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :categoria %><br>
+    <%= form.text_area :categoria %>
+  </p>
+
+  <p>
+    <%= form.label :lugar %><br>
+    <%= form.text_area :lugar %>
+  </p>
+
+  <p>
+    <%= form.label :direccion %><br>
+    <%= form.text_area :direccion %>
+  </p>
+
+  <p>
+    <%= form.label :fecha_inicio %><br>
+    <%= form.text_area :fecha_inicio %>
+  </p>
+
+  <p>
+    <%= form.label :fecha_fin %><br>
+    <%= form.text_area :fecha_fin %>
+  </p>
+
+  <p>
+    <%= form.label :modalidad %><br>
+    <%= form.text_area :modalidad %>
   </p>
 
   <p>
