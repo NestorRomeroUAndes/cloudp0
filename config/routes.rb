@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'eventos/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :eventos
-  root 'welcome#index'
+  root 'eventos#index'
 end
