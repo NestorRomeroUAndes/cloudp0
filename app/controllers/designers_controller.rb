@@ -1,14 +1,14 @@
 class DesignersController < ApplicationController
   def index
-    @designs = designers.all
+    @designs = design.all
   end
 
   def new
-    @design = designers.new
+    @design = design.new
   end
 
   def create
-    @design = designers.new(designers_params)
+    @design = design.new(design_params)
 
     if @design.save
       redirect_to designers_path, notice: "Diseño cargado exitosamente"
