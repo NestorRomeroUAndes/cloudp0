@@ -8,7 +8,7 @@ class DesignersController < ApplicationController
   end
 
   def create
-    @designer = Design.new(design_params)
+    @designer = Design.new(designer_params)
 
     if @designer.save
       redirect_to designers_path, notice: "Diseño cargado exitosamente"
