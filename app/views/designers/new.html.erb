@@ -1,0 +1,30 @@
+<div class="container">
+  <% if !@resume.errors.empty? %>
+   <div>
+
+      <ul>
+         <% @resume.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>      </ul>
+
+     </div>
+  <% end %>
+
+  <div>
+     <%= form_for @design, html: { multipart: true } do |f| %>
+        <%= f.label :Nombres %>
+        <%= f.text_field :Nombres %>
+        <%= f.label :Apellidos %>
+        <%= f.text_field :Apellidos %>
+        <%= f.label :Email %>
+        <%= f.text_field :Email %>
+        <%= f.label :Precio %>
+        <%= f.text_field :Precio %>
+        <%= f.label :Imagen %>
+        <%= f.file_field :Imagen %>
+        <br>
+        <%= f.submit "Save" %>
+     <% end %>
+  </div>
+
+</div>

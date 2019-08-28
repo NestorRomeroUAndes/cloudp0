@@ -1,2 +1,37 @@
 <h1>Todos los diseños publicados para la empresa</h1>
-<p>Generar el listado desde la base de datos</p>
+<div class="container">
+  <% if !flash[:notice].blank? %>
+     <div>
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+
+  <%= link_to "Nuevo diseño", new_design_path %>
+
+  <table border="3">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Precio</th>
+        <th>Ver Imagen</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @designs.each do |design| %>
+
+      <tr>
+        <td><%= design.Nombre %></td>
+        <td><%= design.Apellidos %></td>
+        <td><%= design.Email %></td>
+        <td><%= design.Precio %></td>
+        <td><%= link_to "Download", design.Imagen_url %></td>
+      </tr>
+
+      <% end %>   
+    </tbody>
+
+  </table>
+</div>
