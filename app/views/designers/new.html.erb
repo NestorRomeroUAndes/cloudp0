@@ -1,9 +1,9 @@
 <div class="container">
-  <% if !@design.errors.empty? %>
+  <% if !@designer.errors.empty? %>
    <div>
 
       <ul>
-         <% @design.errors.full_messages.each do |msg| %>
+         <% @designer.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
          <% end %>      </ul>
 
@@ -11,7 +11,7 @@
   <% end %>
 
   <div>
-     <%= form_for @design, html: { multipart: true } do |f| %>
+     <%= form_for @designer, html: { multipart: true } do |f| %>
         <%= f.label :Nombres %>
         <%= f.text_field :Nombres %>
         <%= f.label :Apellidos %>
