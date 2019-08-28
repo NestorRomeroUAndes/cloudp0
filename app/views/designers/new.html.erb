@@ -1,9 +1,9 @@
 <div class="container">
-  <% if !@resume.errors.empty? %>
+  <% if !@design.errors.empty? %>
    <div>
 
       <ul>
-         <% @resume.errors.full_messages.each do |msg| %>
+         <% @design.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
          <% end %>      </ul>
 
