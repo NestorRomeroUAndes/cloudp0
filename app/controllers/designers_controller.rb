@@ -11,7 +11,7 @@ class DesignersController < ApplicationController
     @designer = Design.new(designers_params)
 
     if @designer.save
-      redirect_to designers_path, notice: "Diseño cargado exitosamente"
+      redirect_to designers_index_path, notice: "Diseño cargado exitosamente"
     else
       render 'new'
     end
@@ -19,6 +19,6 @@ class DesignersController < ApplicationController
 
   private
   def designers_params
-    params.require(:design).permit(:Nombres, :Apellidos, :Email, :Precio, :Imagen)   
+    params.require(:design).permit(:Nombres, :Apellidos, :Email, :Precio, :Imagen)
   end
 end
