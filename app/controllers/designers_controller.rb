@@ -9,6 +9,8 @@ class DesignersController < ApplicationController
 
   def create
     @designer = Design.new(designers_params)
+    #el estado debe ser pendiente
+    @designer.Estado = "pendiente"
 
     if @designer.save
       redirect_to designers_index_path, notice: "Diseño cargado exitosamente"

@@ -6,6 +6,7 @@ class CreateDesigns < ActiveRecord::Migration[5.2]
       t.string :Email
       t.string :Imagen
       t.bigint :Precio
+      t.string :Estado
 
       t.timestamps
     end
