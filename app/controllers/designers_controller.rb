@@ -21,6 +21,6 @@ class DesignersController < ApplicationController
 
   private
   def designers_params
-    params.require(:design).permit(:Nombres, :Apellidos, :Email, :Precio, :Imagen)
+    params.require(:design).permit(:Nombres, :Apellidos, :Email, :Precio,:Estado, :Imagen)
   end
 end
