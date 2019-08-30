@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :eventos
   resource :designers, only: [:index, :new, :create]
   root 'eventos#index'
-  mount Resque::server.new, at: "/resque"
+  mount Resque::Server.new, at: "/resque"
 end
