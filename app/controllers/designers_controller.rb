@@ -1,6 +1,7 @@
 class DesignersController < ApplicationController
   def index
     @designers = Design.all
+    Resque.enqueue(Resizer)
   end
 
   def new
