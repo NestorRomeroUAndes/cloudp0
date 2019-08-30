@@ -27,6 +27,8 @@ gem 'clearance', '~> 1.15.1'
 #file upload testing
 gem 'carrierwave'
 gem 'bootstrap-sass'
+#background execution library
+gem 'resque'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
