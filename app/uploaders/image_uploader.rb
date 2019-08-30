@@ -33,10 +33,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
-  version :cover do
+  version :cover, :if => :is_live? do
     process resize_to_fit: [800, 600]
     process convert: 'png'
   end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -46,7 +47,15 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    super.chomp(File.extname(super)) + '.png' if original_filename.present?
+  end
+
+  def is_live?(img = nil)
+    @is_live
+  end
+
+  def is_live=(value)
+    @is_live = value
+  end
 end
