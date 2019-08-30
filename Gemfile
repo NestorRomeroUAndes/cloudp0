@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 #use clereance as a autentication system
 gem 'clearance', '~> 1.15.1'
 #file upload testing
+gem 'rmagick'
 gem 'carrierwave'
 gem 'bootstrap-sass'
 #background execution library
