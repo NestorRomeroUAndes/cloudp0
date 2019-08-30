@@ -1,3 +1,5 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
   get 'designers/index'
   get 'eventos/index'
@@ -5,4 +7,5 @@ Rails.application.routes.draw do
   resources :eventos
   resource :designers, only: [:index, :new, :create]
   root 'eventos#index'
+  mount Resque::server.new, at: "/resque"
 end
