@@ -17,6 +17,7 @@
         <th>Precio</th>
         <th>Estado</th>
         <th>Ver Imagen</th>
+        <th>Imagen ajustada</th>
       </tr>
     </thead>
 
@@ -30,6 +31,7 @@
         <td><%= design.Precio %></td>
         <td><%= design.Estado %></td>
         <td><%= link_to "Download", design.Imagen.url %></td>
+        <%= image_tag design.Image_url(:cover) if design.Image?%>
       </tr>
 
       <% end %>
