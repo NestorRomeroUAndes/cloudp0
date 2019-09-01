@@ -31,7 +31,7 @@
         <td><%= design.Precio %></td>
         <td><%= design.Estado %></td>
         <td><%= link_to "Download", design.Imagen.url %></td>
-        <td><%= image_tag design.Imagen.url(:cover) if design.Imagen.url(:cover).nil?   %></td>
+        <td><%= image_tag design.Imagen.url(:cover) if !design.Imagen.url(:cover).nil?   %></td>
       </tr>
 
       <% end %>
