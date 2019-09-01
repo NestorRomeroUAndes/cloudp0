@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
-  version :cover do
+  version :cover, if: :is_live? do
     process resize_to_fit: [800, 600]
     process convert: 'png'
   end
@@ -51,7 +51,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     super.chomp(File.extname(super)) + '.png' if original_filename.present?
   end
 
-  def is_live?(image = nil)
+  def is_live?(image)
     @is_live
   end
 
