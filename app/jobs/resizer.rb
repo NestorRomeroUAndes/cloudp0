@@ -6,8 +6,6 @@ class Resizer
     @pendingDesigns = Design.where(Estado: "pendiente")
     @pendingDesigns.each do |pd|
       pd.Estado = "Disponible"
-      pd.Imagen.is_live = true
-      pd.Imagen.recreate_versions!(:cover)
       pd.save
     end
   end
