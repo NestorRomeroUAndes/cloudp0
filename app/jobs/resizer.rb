@@ -8,7 +8,7 @@ class Resizer
       pd.Estado = "Disponible"
       pd.Imagen.is_live = true
       pd.save
-      pd.Imagen.recreate_versions! :cover
+      pd.Imagen.recreate_versions!(:cover)
     end
   end
 end
