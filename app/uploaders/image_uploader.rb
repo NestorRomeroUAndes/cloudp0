@@ -51,7 +51,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     super.chomp(File.extname(super)) + '.png' if original_filename.present?
   end
 
-  def is_live?
+  def is_live?(img = nil)
     @is_live
   end
 
