@@ -8,7 +8,7 @@ class Resizer
       pd.Estado = "Disponible"
       img = pd.Imagen.cover.file.file
       mrk = pd.Nombres + " " + pd.Apellidos + " " + pd.created_at.to_s
-      rimg = Magick::Image.read(img).fisrt
+      rimg = Magick::Image.read(img).first
       cover = rimg.resize(800, 600)
       mark = Magick::Image.new(cover.columns, cover.rows) {self.background_color = "none"}
       draw = Magick::Draw.new
