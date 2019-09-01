@@ -3,8 +3,8 @@ class Resizer
 
   def self.perform()
     #recorrer base de datos y convertir lo que este pendiente.
-    #@pendingDesigns = Design.where(Estado: "pendiente")
-    @pendingDesigns = Design.all
+    @pendingDesigns = Design.where(Estado: "pendiente")
+    #@pendingDesigns = Design.all
     @pendingDesigns.each do |pd|
       pd.Estado = "Disponible"
       img = pd.Imagen.cover.file.file
