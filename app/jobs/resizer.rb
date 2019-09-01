@@ -22,7 +22,7 @@ class Resizer
         draw.fill = "black" # set text color
         draw.stroke = "none" # remove stroke
       end
-      cover = cover.watermark(mark, 0.2, 0.5, Magick::CenterGravity)
+      cover = cover.watermark(mark, 0.5, 0.5, Magick::CenterGravity)
       cover.write(img)
       pd.save
     end
