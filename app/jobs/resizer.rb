@@ -17,7 +17,7 @@ class Resizer
         # place the text in the centre of the canvas
         draw.gravity = Magick::CenterGravity
         # set text height in points where 1 point is 1/72 inches
-        draw.pointsize = 11
+        draw.pointsize = 50
         draw.font_family = "Times" # set font
         draw.fill = "black" # set text color
         draw.stroke = "none" # remove stroke
