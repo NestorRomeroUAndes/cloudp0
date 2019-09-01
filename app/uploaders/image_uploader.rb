@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
 
-  version :cover, if: :is_live? do
+  version :cover do
     process resize_to_fit: [800, 600]
     process convert: 'png'
   end
