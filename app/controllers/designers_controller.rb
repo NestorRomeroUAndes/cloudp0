@@ -14,9 +14,9 @@ class DesignersController < ApplicationController
       draw = Magick::Draw.new
       draw.annotate(mark, 0, 0, 0, 0, mrk) do
         # place the text in the centre of the canvas
-        draw.gravity = Magick::CenterGravity
+        draw.gravity = Magick::SouthGravity
         # set text height in points where 1 point is 1/72 inches
-        draw.pointsize = 12
+        draw.pointsize = 20
         draw.font_family = "Times" # set font
         draw.fill = "black" # set text color
         draw.stroke = "none" # remove stroke
