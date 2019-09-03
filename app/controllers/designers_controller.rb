@@ -2,7 +2,7 @@ class DesignersController < ApplicationController
 
   def index
     @empresa = "-"
-    if params[:status]
+    if !params[:status].blank?
       @empresa = params[:status]
     end
     @designers = Design.all
