@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
   def vanity
     @empresa = "-"
     if !params[:usrid].blank?
-      @empresa = User.find(params[:empresa]).empresa
       @proyectos = User.find(params[:usrid]).proyecto
+      @empresa = User.find(params[:usrid]).empresa
       #@proyectos = @user.proyecto
     end
   end
