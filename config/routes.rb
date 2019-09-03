@@ -1,6 +1,7 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
+  resources :proyectos
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
