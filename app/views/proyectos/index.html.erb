@@ -6,17 +6,17 @@
 <% @proyectos.each do |proyecto| %>
   <p>
     <strong>Nombre:</strong>
-    <%= @article.nombre %>
+    <%= @proyecto.nombre %>
   </p>
 
   <p>
     <strong>Descripcion:</strong>
-    <%= @article.descripcion %>
+    <%= @proyecto.descripcion %>
   </p>
 
   <p>
     <strong>Valor:</strong>
-    <%= @article.valor %>
+    <%= @proyecto.valor %>
   </p>
   <%= link_to 'Detalles', proyecto_path(proyecto) %>
   <%= link_to 'Editar', edit_proyecto_path(proyecto) %>
@@ -33,7 +33,7 @@
         <th colspan="3">opciones</th>
       </tr>
 
-      <% @proyectos.design.each do |d| %>
+      <% @proyecto.design.each do |d| %>
         <tr>
           <td><%= d.Nombres %></td>
           <td><%= d.Apellidos %></td>
