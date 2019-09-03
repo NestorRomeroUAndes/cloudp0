@@ -1,1 +1,43 @@
 <h2>Listado de proyectos disponible en la empresa <%= @empresa%></h2>
+
+<% @proyectos.each do |proyecto| %>
+  <p>
+    <strong>Nombre:</strong>
+    <%= proyecto.nombre %>
+  </p>
+
+  <p>
+    <strong>Descripcion:</strong>
+    <%= proyecto.descripcion %>
+  </p>
+
+  <p>
+    <strong>Valor:</strong>
+    <%= proyecto.valor %>
+  </p>
+  <%= link_to 'Detalles', proyecto_path(proyecto) %>
+  <%= link_to 'Editar', edit_proyecto_path(proyecto) %>
+  <%= link_to 'Eliminar', proyecto_path(proyecto),
+          method: :delete,
+          data: { confirm: 'Esta seguro que desea eliminar?' } %></td>
+    <table>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Precio</th>
+        <th>Estado</th>
+        <th colspan="3">opciones</th>
+      </tr>
+
+      <% proyecto.design.each do |d| %>
+        <tr>
+          <td><%= d.Nombres %></td>
+          <td><%= d.Apellidos %></td>
+          <td><%= d.Email %></td>
+          <td><%= d.Precio %></td>
+          <td><%= d.Estado %></td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
