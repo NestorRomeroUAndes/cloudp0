@@ -1,10 +1,10 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
-  resources :proyectos
-  resources :welcome do
+  resources :proyectos do
     resource :designers, only: [:index, :new, :create]
   end
+  resources :welcome
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
