@@ -6,7 +6,7 @@ class DesignersController < ApplicationController
       @empresa = params[:status]
     end
     @designers = Design.all
-    Resque.enqueue(Resizer)
+    #Resque.enqueue(Resizer)
   end
 
   def new
