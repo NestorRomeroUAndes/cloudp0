@@ -1,0 +1,24 @@
+<h1>Editar un proyecto</h1>
+
+<%= form_with(model: @proyecto, local: true) do |form| %>
+<p>
+  <%= form.label :nombre %><br>
+  <%= form.text_field :nombre %>
+</p>
+
+<p>
+  <%= form.label :descripcion %><br>
+  <%= form.text_area :descripcion %>
+</p>
+
+<p>
+  <%= form.label :valor %><br>
+  <%= form.text_area :valor %>
+</p>
+
+<p>
+  <%= form.submit "Guardar cambios"%>
+</p>
+<% end %>
+
+<%= link_to 'Volver al listado', proyecto_path %>

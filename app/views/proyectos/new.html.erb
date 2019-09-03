@@ -1,0 +1,22 @@
+<h1>Nuevo Proyecto</h1>
+
+<%= form_with scope: :proyecto, url: proyectos_path, local: true do |form| %>
+  <p>
+    <%= form.label :nombre %><br>
+    <%= form.text_field :nombre %>
+  </p>
+  <p>
+    <%= form.label :descripcion %><br>
+    <%= form.text_field :descripcion %>
+  </p>
+  <p>
+    <%= form.label :valor %><br>
+    <%= form.text_area :valor %>
+  </p>
+
+  <p>
+    <%= form.submit "Guardar Proyecto"%>
+  </p>
+<% end %>
+
+<%= link_to 'Volver al listado', proyectos_path %>
