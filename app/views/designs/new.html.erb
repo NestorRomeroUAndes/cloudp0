@@ -1,0 +1,31 @@
+<div class="container">
+  <% if !@designer.errors.empty? %>
+   <div>
+
+      <ul>
+         <% @designer.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>      </ul>
+
+     </div>
+  <% end %>
+
+  <div>
+     <%= form_for @designer,url: designers_path , html: { multipart: true } do |f| %>
+        <%= f.label :Nombres %>
+        <%= f.text_field :Nombres %>
+        <%= f.label :Apellidos %>
+        <%= f.text_field :Apellidos %>
+        <%= f.label :Email %>
+        <%= f.text_field :Email %>
+        <%= f.label :Precio %>
+        <%= f.text_field :Precio %>
+        <%= f.label :Imagen %>
+        <%= f.file_field :Imagen %>
+        <br>
+        <%= f.submit "Save" %>
+     <% end %>
+  </div>
+
+  <%= link_to "Volver listado diseños", designers_path %>
+</div>

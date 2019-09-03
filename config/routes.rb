@@ -2,7 +2,7 @@ require 'resque/server'
 
 Rails.application.routes.draw do
   resources :proyectos do
-    resource :designers, only: [:index, :new, :create]
+    resource :designs, only: [:index, :new, :create]
   end
   resources :welcome
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/vanity', to: "welcome#vanity"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :eventos
+  resource :designers, only: [:index, :new, :create]
 
   root 'welcome#index'
   mount Resque::Server.new, at: "/resque"

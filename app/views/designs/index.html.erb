@@ -1,0 +1,41 @@
+<h1>Todos los diseños publicados- para la empresa</h1>
+<div class="container">
+  <% if !flash[:notice].blank? %>
+     <div>
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
+
+  <%= link_to "Nuevo diseño", new_designers_path %>
+
+  <table border="3">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Precio</th>
+        <th>Estado</th>
+        <th>Ver Imagen</th>
+        <th>Imagen ajustada</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @designers.each do |design| %>
+
+      <tr>
+        <td><%= design.Nombres %></td>
+        <td><%= design.Apellidos %></td>
+        <td><%= design.Email %></td>
+        <td><%= design.Precio %></td>
+        <td><%= design.Estado %></td>
+        <td><%= link_to "Download", design.Imagen.url %></td>
+        <td><%= image_tag design.Imagen.url(:cover) if !design.Imagen.url(:cover).nil?   %></td>
+      </tr>
+
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
