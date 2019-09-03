@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   get 'eventos/index'
   get 'welcome/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :eventos
-  resource :designers, only: [:index, :new, :create]
+  resources :eventos do
+    resource :designers, only: [:index, :new, :create]
+  end
+
   root 'welcome#index'
   mount Resque::Server.new, at: "/resque"
 end
