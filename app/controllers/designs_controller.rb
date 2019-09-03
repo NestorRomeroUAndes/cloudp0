@@ -12,7 +12,7 @@ class DesignsController < ApplicationController
 
   def create
     @proyecto = Proyecto.find(params[:proyecto_id])
-    @designer = Design.new(designs_params)
+    @designer = Design.new(designers_params)
     #el estado debe ser pendiente
     @designer.Estado = "pendiente"
     @design = @proyecto.design.create(@designer)
