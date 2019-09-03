@@ -12,10 +12,10 @@ class DesignsController < ApplicationController
 
   def create
     @proyecto = Proyecto.find(params[:proyecto_id])
-    @designer = Design.new(designers_params)
+    #@designer = Design.new(designers_params)
     #el estado debe ser pendiente
-    @designer.Estado = "pendiente"
-    @design = @proyecto.design.create(@designer)
+    #@designer.Estado = "pendiente"
+    @design = @proyecto.design.create(designers_params)
         #
     # if @designer.save
     #   redirect_to welcome_index_path, notice: "Diseño cargado exitosamente"
