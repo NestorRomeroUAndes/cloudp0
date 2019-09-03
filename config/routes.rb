@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'designers/index'
   get 'eventos/index'
   get 'welcome/index'
-  get 'welcome/vanity' to: "welcome#vanity"
+  get 'welcome/vanity', to: "welcome#vanity"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :eventos
 
