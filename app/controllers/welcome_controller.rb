@@ -4,8 +4,9 @@ class WelcomeController < ApplicationController
   end
   def vanity
     @empresa = "-"
-    if !params[:status].blank?
-      @empresa = params[:status]
+    if !params[:empresa].blank?
+      @empresa = params[:empresa]
+
     end
   end
 end
