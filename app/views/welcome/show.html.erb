@@ -1,0 +1,55 @@
+<h2>Detalle del proyecto</h2>
+
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @proyecto.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @proyecto.descripcion %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @proyecto.valor %>
+</p>
+
+
+  <table>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Email</th>
+      <th>Precio</th>
+      <th>Estado</th>
+      <th colspan="3">opciones</th>
+    </tr>
+
+    <% @proyecto.design.each do |d| %>
+      <tr>
+        <td><%= d.Nombres %></td>
+        <td><%= d.Apellidos %></td>
+        <td><%= d.Email %></td>
+        <td><%= d.Precio %></td>
+        <td><%= d.Estado %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <h2>Agergar Diseño:</h2>
+  <%= form_with(model: [ @proyecto, @proyecto.design.build ], local: true) do |f| %>
+    <%= f.label :Nombres %>
+    <%= f.text_field :Nombres %>
+    <%= f.label :Apellidos %>
+    <%= f.text_field :Apellidos %>
+    <%= f.label :Email %>
+    <%= f.text_field :Email %>
+    <%= f.label :Precio %>
+    <%= f.text_field :Precio %>
+    <%= f.label :Imagen %>
+    <%= f.file_field :Imagen %>
+    <br>
+    <%= f.submit "Save" %>
+  <% end %>
