@@ -24,7 +24,8 @@
         <th>Email</th>
         <th>Precio</th>
         <th>Estado</th>
-        <th colspan="3">opciones</th>
+        <th>Imagen ajustada</th>
+        <td><%= image_tag design.Imagen.url(:cover) if !design.Imagen.url(:cover).nil?   %></td>
       </tr>
 
       <% proyecto.design.each do |d| %>
