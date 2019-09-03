@@ -1,5 +1,5 @@
 <p>la URL publica para la empresa es:</p>
-<p>http://172.24.42.65:8080/vanity?status=<%= current_user.id%></p>
+<p>http://172.24.42.65:8080/vanity?empresa=<%= current_user.empresa%><%= current_user.id%></p>
 <h2>Listado de todos los Proyectos</h2>
 <%= link_to 'Nuevo proyecto', new_proyecto_path %>
 <table>
