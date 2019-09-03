@@ -7,8 +7,8 @@ class WelcomeController < ApplicationController
     if !params[:usrid].blank?
       @proyectos = User.find(params[:usrid]).proyecto
       @empresa = User.find(params[:usrid]).empresa
-      #@proyectos = @user.proyecto
     end
+    Resque.enqueue(Resizer)
   end
 
   def show
