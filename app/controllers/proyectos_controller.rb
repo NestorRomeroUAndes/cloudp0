@@ -18,7 +18,7 @@ class ProyectosController < ApplicationController
   end
 
   def create
-    @proyecto = current_user.proyecto.build(evento_params)
+    @proyecto = current_user.proyecto.build(proyecto_params)
     if @proyecto.save
       redirect_to @proyecto
     else
@@ -29,7 +29,7 @@ class ProyectosController < ApplicationController
   def update
     @proyecto = current_user.proyecto.find(params[:id])
 
-    if @proyecto.update(evento_params)
+    if @proyecto.update(proyecto_params)
       redirect_to @proyecto
     else
       render 'edit'
