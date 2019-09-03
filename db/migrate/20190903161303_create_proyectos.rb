@@ -5,6 +5,8 @@ class CreateProyectos < ActiveRecord::Migration[5.2]
       t.string, :descripcion
       t.bigint :valor
 
+      t.belongs_to :user, null: false, foreign_key: true
+
       t.timestamps
     end
   end
