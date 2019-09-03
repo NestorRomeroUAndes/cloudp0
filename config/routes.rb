@@ -1,7 +1,9 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
-  resources :proyectos
+  resources :proyectos do
+    resource :designers, only: [:index, :new, :create]
+  end
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -17,11 +19,9 @@ Rails.application.routes.draw do
   get 'designers/index'
   get 'eventos/index'
   get 'welcome/index'
-  get 'welcome/vanity'
+  get 'welcome/vanity' to: "welcome#vanity"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :eventos do
-    resource :designers, only: [:index, :new, :create]
-  end
+  resources :eventos
 
   root 'welcome#index'
   mount Resque::Server.new, at: "/resque"
