@@ -22,31 +22,15 @@
       <strong>Valor:</strong>
       <%= proyecto.valor %>
     </p>
+
+    <p>
+      <strong>Total diseños:</strong>
+      <%= proyecto.design.count %>
+    </p>
     <%= link_to 'Detalles', proyecto_path(proyecto) %>
     <%= link_to 'Editar', edit_proyecto_path(proyecto) %>
     <%= link_to 'Eliminar', proyecto_path(proyecto),
             method: :delete,
             data: { confirm: 'Esta seguro que desea eliminar?' } %>
   </div>
-
-    <table border="1">
-      <tr>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Email</th>
-        <th>Precio</th>
-        <th>Estado</th>
-        <th colspan="3">opciones</th>
-      </tr>
-
-      <% proyecto.design.each do |d| %>
-        <tr>
-          <td><%= d.Nombres %></td>
-          <td><%= d.Apellidos %></td>
-          <td><%= d.Email %></td>
-          <td><%= d.Precio %></td>
-          <td><%= d.Estado %></td>
-        </tr>
-      <% end %>
-    </table>
 <% end %>
