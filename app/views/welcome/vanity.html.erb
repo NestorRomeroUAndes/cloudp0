@@ -21,23 +21,19 @@
 </div>
 <table border="1">
       <tr>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Email</th>
-        <th>Precio</th>
+
         <th>Estado</th>
+        <th>Fecha</th>
         <th>Imagen ajustada</th>
 
       </tr>
 
       <% proyecto.design.each do |d| %>
         <tr>
-          <td><%= d.Nombres %></td>
-          <td><%= d.Apellidos %></td>
-          <td><%= d.Email %></td>
-          <td><%= d.Precio %></td>
+
           <td><%= d.Estado %></td>
-          <td><%= image_tag d.Imagen.url(:cover) if !d.Imagen.url(:cover).nil?   %></td>
+          <td><%= d.created_at %></td>
+          <td><%= image_tag d.Imagen.url(:cover) if !d.Imagen.url(:cover).nil? and d.Estado == "Disponible"   %></td>
         </tr>
       <% end %>
     </table>
