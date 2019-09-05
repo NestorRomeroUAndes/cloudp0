@@ -7,26 +7,29 @@
 <%= link_to 'Nuevo proyecto', new_proyecto_path %>
 
 <% @proyectos.each do |proyecto| %>
-  <p>
-    <strong>Nombre:</strong>
-    <%= proyecto.nombre %>
-  </p>
+  <div class="">
+    <p>
+      <strong>Nombre:</strong>
+      <%= proyecto.nombre %>
+    </p>
 
-  <p>
-    <strong>Descripcion:</strong>
-    <%= proyecto.descripcion %>
-  </p>
+    <p>
+      <strong>Descripcion:</strong>
+      <%= proyecto.descripcion %>
+    </p>
 
-  <p>
-    <strong>Valor:</strong>
-    <%= proyecto.valor %>
-  </p>
-  <%= link_to 'Detalles', proyecto_path(proyecto) %>
-  <%= link_to 'Editar', edit_proyecto_path(proyecto) %>
-  <%= link_to 'Eliminar', proyecto_path(proyecto),
-          method: :delete,
-          data: { confirm: 'Esta seguro que desea eliminar?' } %></td>
-    <table>
+    <p>
+      <strong>Valor:</strong>
+      <%= proyecto.valor %>
+    </p>
+    <%= link_to 'Detalles', proyecto_path(proyecto) %>
+    <%= link_to 'Editar', edit_proyecto_path(proyecto) %>
+    <%= link_to 'Eliminar', proyecto_path(proyecto),
+            method: :delete,
+            data: { confirm: 'Esta seguro que desea eliminar?' } %>
+  </div>
+
+    <table border="1">
       <tr>
         <th>Nombres</th>
         <th>Apellidos</th>
