@@ -6,6 +6,9 @@ class Resizer
     @pendingDesigns = Design.where(Estado: "pendiente")
     #@pendingDesigns = Design.all
     @pendingDesigns.each do |pd|
+      if pd.Imagen.blank?
+        next
+      end
       pd.Estado = "Disponible"
       img = pd.Imagen.cover.file.file
       mrk = pd.Nombres + " " + pd.Apellidos + " " + pd.created_at.to_s
