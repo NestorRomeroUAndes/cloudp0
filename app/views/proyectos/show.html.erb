@@ -28,6 +28,8 @@
     <th>Precio</th>
     <th>Estado</th>
     <th>fecha</th>
+    <th>Original</th>
+    <th>Procesada</th>
     <th>Imagen</th>
   </tr>
 
@@ -39,8 +41,8 @@
       <td><%= d.Precio %></td>
       <td><%= d.Estado %></td>
       <td><%= d.created_at %></td>
-      <%= link_to ' Descargar Imagen Original', d.Imagen.url %>
-      <%= link_to ' Descargar Imagen Procesada', d.Imagen.url(:cover) if !d.Imagen.url(:cover).nil? %>
+      <td><%= link_to ' Descargar Imagen Original', d.Imagen.url %></td>
+      <td><%= link_to ' Descargar Imagen Procesada', d.Imagen.url(:cover) if !d.Imagen.url(:cover).nil? %></td>
       <td><%= image_tag d.Imagen.url(:cover) if !d.Imagen.url(:cover).nil?   %></td>
     </tr>
   <% end %>
