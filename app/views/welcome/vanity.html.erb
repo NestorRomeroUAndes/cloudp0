@@ -8,14 +8,14 @@
 
   <p>
     <strong>Descripcion:</strong>
-    <%= value[proyecto].first.descripcion %>
+    <%= @proyectos[proyecto].first.descripcion %>
   </p>
 
   <p>
     <strong>Valor:</strong>
-    <%= value[proyecto].first.valor %>
+    <%= @proyectos[proyecto].first.valor %>
   </p>
-  <%= link_to 'Detalles', welcome_path(value[proyecto].first.id) %>
+  <%= link_to 'Detalles', welcome_path(@proyectos[proyecto].first.id) %>
 
     <table>
       <tr>
@@ -28,7 +28,7 @@
 
       </tr>
 
-      <% value[proyecto].each do |d| %>
+      <% @proyectos[proyecto].each do |d| %>
         <tr>
           <td><%= d.Nombres %></td>
           <td><%= d.Apellidos %></td>
