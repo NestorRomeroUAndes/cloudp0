@@ -30,7 +30,7 @@
     <th>Imagen</th>
   </tr>
 
-  <% @proyecto.design.each do |d| %>
+  <% @designs.each do |d| %>
     <tr>
       <td><%= d.Nombres %></td>
       <td><%= d.Apellidos %></td>
@@ -41,3 +41,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= will_paginate @designs %>
