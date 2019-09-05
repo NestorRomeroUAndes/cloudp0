@@ -26,7 +26,7 @@ class Resizer
         draw.stroke = "none" # remove stroke
       end
       cover = cover.watermark(mark, 0.5, 0.5, Magick::CenterGravity)
-      cover.write(img)
+      cover.write(img.chomp(File.extname(img)) + '.png')
       pd.save
     end
   end

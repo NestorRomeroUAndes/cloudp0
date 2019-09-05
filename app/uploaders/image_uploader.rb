@@ -34,7 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :cover do
-    
+
   end
 
 
@@ -46,9 +46,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  def filename
-    super.chomp(File.extname(super)) + '.png' if original_filename.present?
-  end
+  # def filename
+  #   super.chomp(File.extname(super)) + '.png' if original_filename.present?
+  # end
 
   def is_live?(img = nil)
     @is_live
