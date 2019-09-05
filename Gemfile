@@ -30,7 +30,7 @@ gem 'carrierwave'
 #background execution library
 gem 'resque'
 #gem to manage pagination
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
