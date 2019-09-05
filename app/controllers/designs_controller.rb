@@ -15,13 +15,11 @@ class DesignsController < ApplicationController
     #@designer = Design.new(designers_params)
     #el estado debe ser pendiente
     #@designer.Estado = "pendiente"
-    @design = @proyecto.design.create(designers_params)
-        #
-    # if @designer.save
-    #   redirect_to welcome_index_path, notice: "Diseño cargado exitosamente"
-    # else
-    #   render 'new'
-    # end
+    if @proyecto.design.create(designers_params)
+      redirect_to welcome_index_path, notice: "Diseño cargado exitosamente"
+    else
+      render 'new'
+    end
   end
 
   private
