@@ -1,24 +1,25 @@
 <h2>Listado de proyectos disponible en la empresa <%= @empresa%></h2>
 
 <% @proyectos.each do |proyecto| %>
-<p>-------------------------------------------------------------------</p>
-  <p>
-    <strong>Nombre:</strong>
-    <%= proyecto.nombre %>
-  </p>
+<div class="alert alert-secondary">
+  <p>-------------------------------------------------------------------</p>
+    <p>
+      <strong>Nombre:</strong>
+      <%= proyecto.nombre %>
+    </p>
 
-  <p>
-    <strong>Descripcion:</strong>
-    <%= proyecto.descripcion %>
-  </p>
+    <p>
+      <strong>Descripcion:</strong>
+      <%= proyecto.descripcion %>
+    </p>
 
-  <p>
-    <strong>Valor:</strong>
-    <%= proyecto.valor %>
-  </p>
-  <%= link_to 'Detalles', welcome_path(proyecto) %>
-
-    <table border="1">
+    <p>
+      <strong>Valor:</strong>
+      <%= proyecto.valor %>
+    </p>
+    <%= link_to 'Detalles', welcome_path(proyecto) %>
+</div>
+<table border="1">
       <tr>
         <th>Nombres</th>
         <th>Apellidos</th>
