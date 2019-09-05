@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   def vanity
     @empresa = "-"
     if !params[:usrid].blank?
-      @proyectos = User.find(params[:usrid]).proyecto.include(:design).order(id: :desc)
+      @proyectos = User.find(params[:usrid]).proyecto.order(id: :desc)
       # @proyectos = User.find(params[:usrid]).proyecto.joins(:design).order('id DESC').paginate(:page => params[:page], :per_page => 10)
       #@proyectos = @designs.group_by(&:nombre)
       @empresa = User.find(params[:usrid]).empresa
