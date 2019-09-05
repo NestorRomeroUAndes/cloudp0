@@ -27,7 +27,6 @@ gem 'clearance', '~> 1.15.1'
 #file upload testing
 gem 'rmagick'
 gem 'carrierwave'
-gem 'bootstrap-sass'
 #background execution library
 gem 'resque'
 #gem to manage pagination
