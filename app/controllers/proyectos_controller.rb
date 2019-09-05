@@ -7,7 +7,7 @@ class ProyectosController < ApplicationController
 
   def show
     @proyecto = current_user.proyecto.find(params[:id])
-    @designs = @proyecto.paginate(page: params[:page], per_page: 10)
+    @designs = @proyecto.design.paginate(page: params[:page], per_page: 10)
   end
 
   def edit
