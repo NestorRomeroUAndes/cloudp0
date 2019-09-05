@@ -16,7 +16,7 @@ class DesignsController < ApplicationController
     #el estado debe ser pendiente
     #@designer.Estado = "pendiente"
     if @proyecto.design.create(designers_params)
-      redirect_to welcome_index_path, notice: "Diseño cargado exitosamente"
+      redirect_to welcome_path(@proyecto), notice: "Hemos recibido tu diseño y lo estamos procesado para que sea publicado. Tan pronto esto ocurra, te notificaremos por email."
     else
       render 'new'
     end
