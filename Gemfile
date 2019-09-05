@@ -33,6 +33,7 @@ gem 'resque'
 #gem to manage pagination
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
