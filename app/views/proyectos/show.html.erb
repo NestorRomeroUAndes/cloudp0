@@ -14,6 +14,31 @@
   <%= @proyecto.valor %>
 </p>
 
+<p>
+  <strong>Listado de diseños</strong>
+</p>
+
+<table border="1">
+  <tr>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Email</th>
+    <th>Precio</th>
+    <th>Estado</th>
+    <th colspan="3">opciones</th>
+  </tr>
+
+  <% @proyecto.design.each do |d| %>
+    <tr>
+      <td><%= d.Nombres %></td>
+      <td><%= d.Apellidos %></td>
+      <td><%= d.Email %></td>
+      <td><%= d.Precio %></td>
+      <td><%= d.Estado %></td>
+    </tr>
+  <% end %>
+</table>
+
 
 <%= link_to 'Editar Poyecto', edit_proyecto_path(@proyecto) %> |
 <%= link_to 'Volver al listado', proyectos_path %>
