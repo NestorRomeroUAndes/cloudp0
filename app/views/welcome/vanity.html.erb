@@ -1,21 +1,21 @@
 <h2>Listado de proyectos disponible en la empresa <%= @empresa%></h2>
 
-<% @proyectos.each do |proyecto| %>
+<% @proyectos.each do |proyecto, value| %>
   <p>
     <strong>Nombre:</strong>
-    <%= proyecto.nombre %>
+    <%= proyecto %>
   </p>
 
   <p>
     <strong>Descripcion:</strong>
-    <%= proyecto.descripcion %>
+    <%= value[proyecto].first.descripcion %>
   </p>
 
   <p>
     <strong>Valor:</strong>
-    <%= proyecto.valor %>
+    <%= value[proyecto].first.valor %>
   </p>
-  <%= link_to 'Detalles', welcome_path(proyecto) %>
+  <%= link_to 'Detalles', welcome_path(value[proyecto].first.id) %>
 
     <table>
       <tr>
@@ -28,7 +28,7 @@
 
       </tr>
 
-      <% proyecto.design.each do |d| %>
+      <% value[proyecto].each do |d| %>
         <tr>
           <td><%= d.Nombres %></td>
           <td><%= d.Apellidos %></td>
