@@ -16,6 +16,39 @@
   <%= @proyecto.valor %>
 </p>
 
+<% if !@proyecto.errors.empty? %>
+ <div>
+
+    <ul>
+       <% @proyecto.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+       <% end %>      </ul>
+
+   </div>
+<% end %>
+
+<% if !flash[:notice].blank? %>
+   <div>
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<h2>Agergar Diseño:</h2>
+<%= form_with(model: [ @proyecto, @proyecto.design.build ], local: true) do |f| %>
+  <%= f.label :Nombres %>
+  <%= f.text_field :Nombres %>
+  <%= f.label :Apellidos %>
+  <%= f.text_field :Apellidos %>
+  <%= f.label :Email %>
+  <%= f.text_field :Email %>
+  <%= f.label :Precio %>
+  <%= f.text_field :Precio %>
+  <%= f.label :Imagen %>
+  <%= f.file_field :Imagen %>
+  <br>
+  <%= f.submit "Save" %>
+<% end %>
+
 
   <table>
     <tr>
@@ -37,19 +70,3 @@
       </tr>
     <% end %>
   </table>
-
-  <h2>Agergar Diseño:</h2>
-  <%= form_with(model: [ @proyecto, @proyecto.design.build ], local: true) do |f| %>
-    <%= f.label :Nombres %>
-    <%= f.text_field :Nombres %>
-    <%= f.label :Apellidos %>
-    <%= f.text_field :Apellidos %>
-    <%= f.label :Email %>
-    <%= f.text_field :Email %>
-    <%= f.label :Precio %>
-    <%= f.text_field :Precio %>
-    <%= f.label :Imagen %>
-    <%= f.file_field :Imagen %>
-    <br>
-    <%= f.submit "Save" %>
-  <% end %>
